@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
 //                Intent i=new Intent(MainActivity.this,ReceiveMsgActivity.class);
 //                i.putExtra("msg",msg.getText().toString());
                 Intent i=new Intent(Intent.ACTION_SEND);
+                Intent ic=Intent.createChooser(i,"Send thruo..");//Allow user to choose everytime
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_TEXT,msg.getText().toString());
-                startActivity(i);
+                startActivity(ic);
 
             }
         });
