@@ -4,7 +4,7 @@
     <string name="findBeer">Find Beer!</string>
 
     <string-array name="beer_color">
-        <item>Light</item>
+        <item>light</item>
         <item>amber</item>
         <item>brown</item>
         <item>dark</item>
