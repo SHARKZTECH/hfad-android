@@ -24,8 +24,11 @@ public class MainActivity extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(MainActivity.this,ReceiveMsgActivity.class);
-                i.putExtra("msg",msg.getText().toString());
+//                Intent i=new Intent(MainActivity.this,ReceiveMsgActivity.class);
+//                i.putExtra("msg",msg.getText().toString());
+                Intent i=new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_TEXT,msg.getText().toString());
                 startActivity(i);
 
             }
