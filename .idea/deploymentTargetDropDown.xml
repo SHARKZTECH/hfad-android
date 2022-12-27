@@ -7,11 +7,22 @@
         <deviceKey>
           <Key>
             <type value="SERIAL_NUMBER" />
-            <value value="emulator-5554" />
+            <value value="0300911833002684" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-12-27T09:11:32.582473700Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-12-27T12:24:09.163646100Z" />
+    <runningDeviceTargetsSelectedWithDialog>
+      <Target>
+        <type value="RUNNING_DEVICE_TARGET" />
+        <deviceKey>
+          <Key>
+            <type value="SERIAL_NUMBER" />
+            <value value="emulator-5554" />
+          </Key>
+        </deviceKey>
+      </Target>
+    </runningDeviceTargetsSelectedWithDialog>
   </component>
 </project>
