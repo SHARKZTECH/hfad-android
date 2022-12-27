@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -40,9 +42,21 @@ public class MainActivity extends AppCompatActivity implements WorkoutListFragme
 
     @Override
     public void itemClicked(int id) {
-        Intent intent=new Intent(MainActivity.this,DetailActivity.class);
-        intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID,id);
-        startActivity(intent);
+        View fragment=findViewById(R.id.fragment_container);
+        if(fragment !=null){
+            WorkoutDetailFragment detailFragment=new WorkoutDetailFragment();
+            FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
+            detailFragment.setWorkoutId(id);
+
+            ft.replace(R.id.fragment_container,detailFragment);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.addToBackStack(null);
+            ft.commit();
+        }else{
+            Intent intent=new Intent(MainActivity.this,DetailActivity.class);
+            intent.putExtra(DetailActivity.EXTRA_WORKOUT_ID,id);
+            startActivity(intent);
+        }
 
     }
 }
